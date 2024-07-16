@@ -32,7 +32,7 @@ export class AppComponent {
 
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.contatos.filter(batata => {
-      return batata.nome.toLowerCase().startsWith(letra);
+      return batata.nome.toLowerCase().startsWith(letra); // Retorna a letra primeira letra do nome
     });
   }
 }
