@@ -31,6 +31,8 @@ export class AppComponent {
   contatos: Contatos[] = []; // agenda
 
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
-    return this.contatos;
+    return this.contatos.filter(batata => {
+      return batata.nome.toLowerCase().startsWith(letra);
+    });
   }
 }
