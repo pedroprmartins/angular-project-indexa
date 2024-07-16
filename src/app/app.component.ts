@@ -5,7 +5,7 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatosComponent } from './componentes/contatos/contatos.component';
 
-interface contatos {
+interface Contatos {
   id: number,
   nome: string,
   telefone: string
@@ -28,5 +28,5 @@ interface contatos {
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: contatos[] = []; // agenda
+  contatos: Contatos[] = []; // agenda
 }
