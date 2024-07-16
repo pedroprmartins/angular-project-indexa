@@ -28,7 +28,8 @@ interface Contatos {
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contatos[] = []; // agenda
+  contatos: Contatos[] = [];
+  filtroPorTexto: string = '';
 
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.contatos.filter(batata => {
