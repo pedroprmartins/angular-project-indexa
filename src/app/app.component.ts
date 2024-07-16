@@ -30,7 +30,6 @@ export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
   contatos: Contatos[] = agenda;
 
-  // A método abaixo é uma funcionalidade
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.contatos.filter(batata => {
       return batata.nome.toLowerCase().startsWith(letra);
