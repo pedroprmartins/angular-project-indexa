@@ -11,7 +11,7 @@ interface Contatos {
   telefone: string
 }
 
-// import agenda from './agenda.json';
+import agenda from './agenda.json';
 
 @Component({
   selector: 'app-root',
@@ -28,11 +28,12 @@ interface Contatos {
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contatos[] = []; // agenda
+  contatos: Contatos[] = agenda;
 
+  // A método abaixo é uma funcionalidade
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.contatos.filter(batata => {
-      return batata.nome.toLowerCase().startsWith(letra); // Retorna a letra primeira letra do nome
+      return batata.nome.toLowerCase().startsWith(letra);
     });
   }
 }
