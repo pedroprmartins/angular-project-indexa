@@ -11,7 +11,7 @@ interface Contatos {
   telefone: string
 }
 
-import agenda from './agenda.json';
+// import agenda from './agenda.json';
 
 @Component({
   selector: 'app-root',
@@ -28,7 +28,7 @@ import agenda from './agenda.json';
 })
 export class AppComponent {
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contatos[] = agenda;
+  contatos: Contatos[] = []; // agenda
 
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.contatos.filter(batata => {

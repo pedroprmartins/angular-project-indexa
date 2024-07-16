@@ -1,6 +1,11 @@
 <app-container>
     <app-cabecalho></app-cabecalho>
 
+  <input
+    type="search"
+    placeholder="digite para buscar"
+  />
+
     @for (letra of alfabeto; track letra) {
         <app-separador>
             {{ letra }}
