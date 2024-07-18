@@ -42,6 +42,7 @@ export class AppComponent {
     });
   }
 
+  // Desafio: Manipular o filtro para que letras com ou sem acento seja iguais.
   filtraContantoPorLetraInicial(letra: string): Contatos[] {
     return this.filtrarContatosPorTexto().filter(contato => {
       return contato.nome.toLowerCase().startsWith(letra);
