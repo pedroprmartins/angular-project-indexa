@@ -38,7 +38,7 @@ export class AppComponent {
       return this.contatos;
     }
     return this.contatos.filter(contato => {
-      return contato.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase());
+      return contato.nome.toLowerCase().replace(/[ôóõ]/,"o").includes(this.filtroPorTexto.toLowerCase());
     });
   }
 
