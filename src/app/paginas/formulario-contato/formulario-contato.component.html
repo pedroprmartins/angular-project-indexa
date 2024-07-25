@@ -10,23 +10,47 @@
   </header>
   <form>
     <label for="nome">Nome</label>
-    <input/>
+    <input
+      type="text"
+      id="nome"
+      placeholder="Digite o nome do contato"
+    />
     <label for="telefone">Telefone</label>
-    <input/>
+    <input
+      type="text"
+      id="telefone"
+      placeholder="Digite o telefone do contato"
+    />
     <label for="email">Email</label>
-    <input/>
+    <input
+      type="email"
+      id="email"
+      placeholder="Digite o email do contato"
+    />
     <label for="aniversario">Aniversário</label>
-    <input/>
+    <input
+      type="date"
+      id="aniversario"
+      placeholder="Data de nascimento"
+    />
     <label for="redes">Redes sociais</label>
-    <div>
-      <span></span>
-      <input/>
+    <div class="input-container">
+      <span>http://</span>
+      <input
+        type="url"
+        id="redes"
+        placeholder="Adicione a URL da página"
+      />
     </div>
     <label for="redes">Observações</label>
-    <textarea></textarea>
-    <section>
-      <button>Cancelar</button>
-      <button>Salvar contato</button>
+    <textarea
+      type="text"
+      id="observacoes"
+      placeholder="Coloque observações nesse espaço.  Exemplo: “Instrutora da academia “Nova Imagem”, amiga da Júlia”."
+    ></textarea>
+    <section class="botoes">
+      <button class="botao-cancelar" type="button">Cancelar</button>
+      <button class="botao-salvar" type="submit">Salvar contato</button>
     </section>
   </form>
 </app-container>
