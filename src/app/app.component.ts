@@ -4,15 +4,16 @@ import { ContainerComponent } from './componentes/container/container.component'
 import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component';
 import { SeparadorComponent } from './componentes/separador/separador.component';
 import { ContatosComponent } from './componentes/contatos/contatos.component';
+import {FormsModule} from "@angular/forms";
+import {FormularioContatoComponent} from "./paginas/formulario-contato/formulario-contato.component";
+
+import agenda from './agenda.json';
 
 interface Contatos {
   id: number,
   nome: string,
   telefone: string
 }
-
-import agenda from './agenda.json';
-import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -23,7 +24,8 @@ import {FormsModule} from "@angular/forms";
     CabecalhoComponent,
     SeparadorComponent,
     ContatosComponent,
-    FormsModule
+    FormsModule,
+    FormularioContatoComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -38,7 +40,7 @@ export class AppComponent {
       return this.contatos;
     }
     return this.contatos.filter(contato => {
-      return contato.nome.toLowerCase().replace(/[ôóõ]/,"o").includes(this.filtroPorTexto.toLowerCase());
+      return contato.nome.toLowerCase().includes(this.filtroPorTexto.toLowerCase());
     });
   }
 
