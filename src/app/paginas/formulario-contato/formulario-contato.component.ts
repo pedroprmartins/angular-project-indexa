@@ -29,4 +29,12 @@ export class FormularioContatoComponent {
       observacoes: new FormControl('Teste campo observações')
     });
   }
+
+  salvarContato(){
+    console.log(this.contatoForm.value);
+  }
+
+  cancelarContato() {
+    console.log("Cancelado contato");
+  }
 }
