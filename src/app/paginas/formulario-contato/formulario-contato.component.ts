@@ -21,12 +21,12 @@ export class FormularioContatoComponent {
 
   constructor() {
     this.contatoForm = new FormGroup({
-      nome: new FormControl(''),
-      telefone: new FormControl(''),
-      email: new FormControl(''),
+      nome: new FormControl('Nacy'),
+      telefone: new FormControl('99 9999-9999'),
+      email: new FormControl('teste@teste.com'),
       aniversario: new FormControl(''),
       redes: new FormControl(''),
-      observacoes: new FormControl('')
+      observacoes: new FormControl('Teste campo observações')
     });
   }
 }
