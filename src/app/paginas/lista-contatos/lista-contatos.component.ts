@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {RouterLink} from "@angular/router";
 
 import {CabecalhoComponent} from "../../componentes/cabecalho/cabecalho.component";
 import {ContainerComponent} from "../../componentes/container/container.component";
@@ -25,7 +26,8 @@ interface Contatos {
     ContatosComponent,
     FormsModule,
     FormularioContatoComponent,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterLink
   ],
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
