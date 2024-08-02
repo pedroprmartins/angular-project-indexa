@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+
 import {CabecalhoComponent} from "../../componentes/cabecalho/cabecalho.component";
 import {ContainerComponent} from "../../componentes/container/container.component";
 import {ContatosComponent} from "../../componentes/contatos/contatos.component";
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SeparadorComponent} from "../../componentes/separador/separador.component";
 import {FormularioContatoComponent} from "../formulario-contato/formulario-contato.component";
+
 import agenda from '../agenda.json';
 
 interface Contatos {
