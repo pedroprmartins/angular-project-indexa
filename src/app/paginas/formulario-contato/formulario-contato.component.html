@@ -16,7 +16,7 @@
       placeholder="Digite o nome do contato"
       formControlName="nome"
     />
-    @if (contatoForm.get('nome')?.errors) {
+    @if (contatoForm.get('nome')?.errors && contatoForm.get('nome')?.touched) {
       <div class="mensagem-erro">
         campo obrigatório.
       </div>
@@ -29,6 +29,12 @@
       placeholder="Digite o telefone do contato"
       formControlName="telefone"
     />
+    @if(contatoForm.get('telefone')?.errors && contatoForm.get('telefone')?.touched){
+      <div class="mensagem-erro">
+        campo obrigatório
+      </div>
+    }
+
     <label for="email">Email</label>
     <input
       type="email"
@@ -36,6 +42,18 @@
       placeholder="Digite o email do contato"
       formControlName="email"
     />
+    @if(contatoForm.get('email')?.errors?.['required'] && contatoForm.get('email')?.touched){
+      <div class="mensagem-erro">
+        campo obrigatório.
+      </div>
+    }
+
+    @if(contatoForm.get('email')?.errors?.['email'] && contatoForm.get('email')?.touched){
+      <div class="mensagem-erro">
+        formato de e-mail inválido.
+      </div>
+    }
+
     <label for="aniversario">Aniversário</label>
     <input
       type="date"
@@ -62,7 +80,12 @@
     ></textarea>
     <section class="botoes">
       <button (click)="cancelarContato()" class="botao-cancelar" type="button">Cancelar</button>
-      <button class="botao-salvar" type="submit">Salvar contato</button>
+      <button
+        [disabled]="contatoForm.invalid"
+        [ngClass]="contatoForm.valid ? 'botao-salvar' : 'boatao-dasabilitado'"
+        type="submit"
+      >Salvar contato
+      </button>
     </section>
   </form>
 </app-container>
