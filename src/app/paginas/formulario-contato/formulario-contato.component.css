@@ -4,6 +4,13 @@ header .cabecalho-link {
   align-items: center;
 }
 
+header .cabecalho-link button {
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+
 header .cabecalho-link img {
   align-self: center;
   margin-bottom: 56px;
