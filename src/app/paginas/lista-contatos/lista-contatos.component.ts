@@ -8,12 +8,7 @@ import {ContatosComponent} from "../../componentes/contatos/contatos.component";
 import {SeparadorComponent} from "../../componentes/separador/separador.component";
 import {FormularioContatoComponent} from "../formulario-contato/formulario-contato.component";
 import {ContatoService} from "../../services/contato.service";
-
-interface Contatos {
-  id: number,
-  nome: string,
-  telefone: string
-}
+import { Contato } from '../../componentes/contatos/contato';
 
 @Component({
   selector: 'app-lista-contatos',
@@ -33,7 +28,7 @@ interface Contatos {
 })
 export class ListaContatosComponent implements OnInit{
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contatos[] = []; //Aqui era onde recebia a agenda.json
+  contatos: Contato[] = []; //Aqui era onde recebia a agenda.json
   filtroPorTexto: string = '';
 
   //O construtor fica responsavél apenas pela injeção
@@ -43,7 +38,7 @@ export class ListaContatosComponent implements OnInit{
     this.contatos = this.contatoService.obterContatos();
   }
 
-  filtrarContatosPorTexto(): Contatos[] {
+  filtrarContatosPorTexto(): Contato[] {
     if(!this.filtroPorTexto) {
       return this.contatos;
     }
@@ -52,7 +47,7 @@ export class ListaContatosComponent implements OnInit{
     });
   }
 
-  filtraContantoPorLetraInicial(letra: string): Contatos[] {
+  filtraContantoPorLetraInicial(letra: string): Contato[] {
     return this.filtrarContatosPorTexto().filter(contato => {
       return contato.nome.toLowerCase().startsWith(letra);
     });
