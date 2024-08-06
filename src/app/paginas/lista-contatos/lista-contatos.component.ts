@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {RouterLink} from "@angular/router";
 
@@ -7,8 +7,7 @@ import {ContainerComponent} from "../../componentes/container/container.componen
 import {ContatosComponent} from "../../componentes/contatos/contatos.component";
 import {SeparadorComponent} from "../../componentes/separador/separador.component";
 import {FormularioContatoComponent} from "../formulario-contato/formulario-contato.component";
-
-import agenda from '../agenda.json';
+import {ContatoService} from "../../services/contato.service";
 
 interface Contatos {
   id: number,
@@ -32,10 +31,17 @@ interface Contatos {
   templateUrl: './lista-contatos.component.html',
   styleUrl: './lista-contatos.component.css'
 })
-export class ListaContatosComponent {
+export class ListaContatosComponent implements OnInit{
   alfabeto: string = 'abcdefghijklmnopqrstuvwxyz';
-  contatos: Contatos[] = agenda;
+  contatos: Contatos[] = []; //Aqui era onde recebia a agenda.json
   filtroPorTexto: string = '';
+
+  //O construtor fica responsavél apenas pela injeção
+  constructor(private contatoService: ContatoService) {}
+
+  ngOnInit() {
+    this.contatos = this.contatoService.obterContatos();
+  }
 
   filtrarContatosPorTexto(): Contatos[] {
     if(!this.filtroPorTexto) {
