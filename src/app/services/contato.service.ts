@@ -1,36 +1,20 @@
 import { Injectable } from '@angular/core';
+import {HttpClient} from "@angular/common/http";
 
+import {Observable} from "rxjs";
 import { Contato } from "../componentes/contatos/contato";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContatoService {
+  private readonly API = 'http://localhost:3000/contatos';
 
-  protected contatos: Contato[] = [
-    {"id": 1, "nome": "Ana", "telefone": "29 278869420", "email": "email@email.com"},
-    {"id": 2, "nome": "Ágata", "telefone": "38 128451235", "email": "email@email.com"}
-  ];
+  constructor(private http: HttpClient) {}
 
-  constructor() {
-    //tentar obter os dados do localStorage
-    const contatosLocalStorageString = localStorage.getItem('contatos');
-    const contatosLocalStorage = contatosLocalStorageString ? JSON.parse(contatosLocalStorageString) : null;
-
-    if(contatosLocalStorage !== null) {
-      this.contatos = contatosLocalStorage || null;
-    }
-
-    //Salvar os contatos no LocalStorage
-    localStorage.setItem('contatos', JSON.stringify(this.contatos));
+  obterContatos() : Observable<Contato[]> {
+    return this.http.get<Contato[]>(this.API);
   }
 
-  obterContatos(){
-    return this.contatos;
-  }
-
-  salvarContato(contato: Contato){
-    this.contatos.push(contato);
-    localStorage.setItem('contatos', JSON.stringify(this.contatos));
-  }
+  salvarContato(contato: Contato){}
 }
