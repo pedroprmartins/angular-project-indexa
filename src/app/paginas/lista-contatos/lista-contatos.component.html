@@ -19,7 +19,11 @@
       {{ letra }}
     </app-separador>
     @for (contato of filtraContantoPorLetraInicial(letra); track contato.id){
-      <app-contatos [nome]="contato.nome" [telefone]="contato.telefone"></app-contatos>
+      <app-contatos
+        [nome]="contato.nome"
+        [telefone]="contato.telefone"
+        [id]="contato.id!"
+      ></app-contatos>
     }
   }
 
