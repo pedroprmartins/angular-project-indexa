@@ -10,6 +10,10 @@ export const routes: Routes = [
     component: FormularioContatoComponent
   },
   {
+    path: `formulario/:id`,
+    component: FormularioContatoComponent
+  },
+  {
     path: 'lista-contatos',
     component: ListaContatosComponent
   },
@@ -19,7 +23,7 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/formulario',
+    redirectTo: '/lista-contatos',
     pathMatch: 'full'
   }
 ];
