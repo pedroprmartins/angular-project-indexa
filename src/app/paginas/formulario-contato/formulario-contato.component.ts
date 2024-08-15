@@ -37,6 +37,7 @@ export class FormularioContatoComponent implements OnInit{
   inicializarFormulario(){
     this.contatoForm = new FormGroup({
       nome: new FormControl('', Validators.required),
+      avatar: new FormControl('', Validators.required),
       telefone: new FormControl('', Validators.required),
       email: new FormControl('',[Validators.required, Validators.email]),
       aniversario: new FormControl(''),
