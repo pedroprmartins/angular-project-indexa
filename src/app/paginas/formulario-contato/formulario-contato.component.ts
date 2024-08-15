@@ -66,7 +66,25 @@ export class FormularioContatoComponent implements OnInit{
     });
   }
 
+  aoSelecionarArquivo(event: any){
+    const file: File = event.target.files[0];
+    if(file){
+      this.lerArquivo(file);
+    }
+  }
+
+  lerArquivo(file: File){
+    const reader = new FileReader();
+    reader.onload = () => {
+      if(reader.result){
+        this.contatoForm.get('avatar')?.setValue(reader.result);
+      }
+    }
+    reader.readAsDataURL(file);
+  }
+
   cancelarContato() {
     this.contatoForm.reset();
+    this.router.navigateByUrl('/lista-contatos');
   }
 }
