@@ -37,7 +37,7 @@ export class ContatoService {
 
   editarOuSalvarContato(contato: Contato):Observable<Contato>{
     if(contato.id){
-      return this.editarOuSalvarContato(contato);
+      return this.editarContato(contato);
     } else {
       return this.salvarContato(contato);
     }
