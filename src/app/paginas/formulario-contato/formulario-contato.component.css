@@ -210,9 +210,3 @@ input:focus {
   background-color: #ADB5BD;
   cursor:not-allowed;
 }
-
-.mensagem-erro {
-  font-size: 16px;
-  color: red;
-  margin-bottom: 12px;
-}
