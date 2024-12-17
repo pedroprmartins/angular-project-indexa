@@ -8,7 +8,7 @@ import { Contato } from "../componentes/contatos/contato";
   providedIn: 'root'
 })
 export class ContatoService {
-  private readonly API = 'http://localhost:3000/contatos';
+  private readonly API = 'https://api-register-contatos.vercel.app/api/contatos';
 
   constructor(private http: HttpClient) {}
 
